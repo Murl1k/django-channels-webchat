@@ -1,0 +1,51 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'chat/css/chat.css' %}">
+    <link rel="shortcut icon" href="{% static 'chat/img/logo_icon.png' %}">
+    <title>Chat</title>
+</head>
+<body style='overflow:hidden;'>
+    <input type="hidden" value="{{ user.id }}" id="logged-in-user">
+    <div class="blur hidden"></div>
+    <div class="messager-area">
+        <div class="actions">
+            <a class="settings"><i class="bi bi-gear"></i></a>
+            <a class="logout" href="{% url 'chat:logout' %}"><i class="bi bi-box-arrow-in-left"></i></a>
+        </div>
+        <div class="interlocutors">
+            <input class="interlocutors-search" type="text" placeholder=" 🔍 Поиск собеседника..." style="font-family:Arial, FontAwesome">
+            <div class="interlocutors-items">
+            </div>
+        </div>
+        <div class="main-body">
+            <center>Выбери чат, чтобы начать общение!</center>
+        </div>
+    </div>
+    <div class="settings-menu hidden">
+        <div class="close-settings"><i class="bi bi-x-lg"></i></div>
+        <div class="logged-in-user-upper">
+            <div class="logged-in-user-img" title="Установить аватар">
+                <img src="{{ profile.avatar.url }}" id="avatar-image">
+                <form id="avatar-form" enctype="multipart/form-data" method="post" style="display:none;" action="{% url 'chat:change_avatar' %}">
+                    {% csrf_token %}
+                    <input type="file" name="file" id="avatar-input" accept="image/*">
+                </form>
+            </div>
+            <div class="logged-in-user-username">{{ request.user }}</div>
+        </div>
+        <div class="logged-in-user-status">
+            <form method="post" id="status-form" action="{% url 'chat:change_status' %}">
+                {% csrf_token %}
+                <p>Установить статус</p>
+                <textarea id='status-value' name="new-status" maxlength="50">{{ profile.status }}</textarea>
+                <i class="bi bi-check confirm-status"></i>
+            </form>
+        </div>
+    </div>
+    <div class="successfully hidden">Успешно.</div>
+    <div class="unsuccessfully hidden">Произошла ошибка.</div>
+</body>
+<script src="{% static 'chat/js/chat.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'chat/js/settings.js' %}"></script>

@@ -1,0 +1,24 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'chat/css/registration.css' %}">
+</head>
+<body style="overflow:hidden;">
+    {% if not request.user.is_authenticated %}
+    <div class="login-form">
+        <form method="post">
+            <div class="form-errors">
+                {% for error in form.non_field_errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% csrf_token %}
+            {% for f in form %}
+            <p>{{ f.label }}</p>
+            {{ f }}
+            {% endfor %}
+            <button class="login-confirm">Login</button>
+            <p class="register-href">Нет аккаунта? <a href="{% url 'chat:register' %}">Зарегистрируйся!</a></p>
+        </form>
+    </div>
+    {% endif %}
+</body>

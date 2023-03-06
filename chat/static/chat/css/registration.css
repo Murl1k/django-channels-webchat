@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 20px;
+}
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(10, 10, 18);
+    display: grid;
+}
+
+.login-form, .register-form{
+    padding: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 30em;
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(67, 67, 67);
+    color: white;
+    border-radius: 2em;
+}
+
+.login-form form, .register-form form{
+    display: flex;
+    flex-direction: column;
+    justify-self: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.login-form input , .register-form input{
+    margin-bottom: 2em;
+    border-radius: 0.5em;
+    outline: none;
+    border: none;
+    height: 4em;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+
+.login-confirm, .register-confirm {
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
+}
+
+.login-confirm:hover, .register-confirm:hover {
+    background-color: rgb(186, 186, 186);
+    cursor: pointer;
+}
+
+.register-href, .login-href{
+    margin-top: 5%;
+}
+
+.register-href a, .login-href a {
+    color: rgb(222, 240, 255);
+    text-decoration: none;
+}
+
+.register-href a:hover, .login-href a:hover {
+    text-decoration: underline;
+} 
+
+.form-errors {
+    color: red;
+    margin-bottom: 3%;
+}
