@@ -5,7 +5,8 @@
 
 Webchat - проект, написанный на Django 4.1.6. Webchat представляет собой простой приватный мессенджер в режиме реального времени, написанный при помощи django-channels.
 
-https://user-images.githubusercontent.com/109019309/223150814-51911efe-ab7d-4d63-b88c-24c94a221be4.mp4
+![Project preview](https://user-images.githubusercontent.com/109019309/223375795-026ed711-8121-42b2-8343-051ef9335afd.gif)
+
 
 ### Функционал
 ***
