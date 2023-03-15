@@ -23,7 +23,7 @@ Webchat - проект, написанный на Django 4.1.6. Webchat пред
 ### Стек
 ***
 
-##### Frontend:
+#### Frontend:
 HTML, CSS, JS(WebSocket, Ajax)
 
 #### Backend:
